@@ -1,0 +1,11 @@
+<% provide(:title, 'Edit Band') %>
+<h1>Update Your Band Details</h1>
+<div>
+  <div>
+    <%= form_for(@band) do |f| %>
+      <%= render 'fields', f: f %>
+      <%= f.submit "Update Band!" %>
+    <% end %>
+  </div>
+</div>
+

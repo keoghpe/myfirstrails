@@ -32,3 +32,11 @@ following = users[2..5]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+# create a band
+
+user.bands.create(name: "Press Empire", bio: "Dublin band")
+users[2].bands.create(name: "Rolling Stones", bio: "England band")
+users[3].bands.create(name: "The doors", bio: "America band")
+
+users.each { |owner| owner.bands.create!(name: "#{owner.name}'s Band", bio: "Whatever") }

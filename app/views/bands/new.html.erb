@@ -1,0 +1,10 @@
+<% provide(:title, 'Create a band') %>
+<h1>Create a Band</h1>
+<div>
+  <div>
+    <%= form_for(@band) do |f| %>
+      <%= render 'fields', f: f%>
+      <%= f.submit "Create Band!", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
