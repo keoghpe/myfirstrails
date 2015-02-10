@@ -4,6 +4,7 @@ class BandTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:pete)
+    @other_user = users(:archer)
     @band = @user.bands.new(name:"The dirt birds", bio: "Band from Dublin")
   end
 
@@ -29,5 +30,10 @@ class BandTest < ActiveSupport::TestCase
   test "band bio should be no longer than 250 characters" do
     @band.name = "a" * 251
     assert_not @band.valid?
+  end
+
+  test "should tell if band is owned by a user or not" do
+    assert @band.is_owned_by?(@user)
+    assert_not @band.is_owned_by?(@other_user)
   end
 end

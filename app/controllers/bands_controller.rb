@@ -3,7 +3,7 @@ class BandsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :delete]
 
   def index
-    @bands = Band.paginate(page: params[:page])
+    @bands = Band.paginate(page: params[:page], :per_page => 12)
   end
 
   def show

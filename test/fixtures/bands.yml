@@ -1,9 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  bio: MyText
+neilyoung:
+  name: "Neil Young"
+  bio: "Old man"
+  user: mallory
 
-two:
-  name: MyString
-  bio: MyText
+bonjovi:
+  name: "Bon Jovi"
+  bio: "Living on a prayer"
+  user: mallory
+
+ants:
+  name: "The Ants"
+  bio: "A bunch of ants"
+  user: archer
+
+<% 30.times do |n| %>
+band_<%= n %>:
+  name: <%= Faker::Lorem.sentence(5) %>
+  bio: <%= Faker::Lorem.sentence(5) %>
+  user: mallory
+<% end %>

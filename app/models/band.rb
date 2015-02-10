@@ -5,4 +5,8 @@ class Band < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 100 }
   validates :bio, length: { maximum: 250 }
 
+  def is_owned_by?(user)
+    user.id == self.user_id
+  end
+
 end

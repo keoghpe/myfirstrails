@@ -1,9 +1,11 @@
 <% provide(:title, 'Bands' ) %>
 <h1>Bands</h1>
+
+<p>Have a band? Create an account for them!</p>
+<%= link_to "Create Band", new_band_path, class: "btn btn-lg btn-primary" %>
+
 <%= will_paginate %>
-
-<ul>
+<div class="row">
   <%= render @bands %>
-</ul>
-
+</div>
 <%= will_paginate %>
