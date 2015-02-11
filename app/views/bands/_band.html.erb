@@ -1,6 +1,9 @@
 <div class="col-md-4">
   <%= link_to(band) do %>
   <img src="./uploads/micropost/picture/304/hudson.png" class="img-responsive" />
-  <h1 class="text-center"><%= band.name%></h1>
+  <h1 class="text-center"><%= band.name %></h1>
+  <% end %>
+  <% if current_user && (current_user.admin? || band.is_owned_by?(current_user)) %>
+    <%= link_to "delete", band, method: :delete, data: { confirm: "You sure?" }  %>
   <% end %>
 </div>

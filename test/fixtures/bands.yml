@@ -4,20 +4,24 @@ neilyoung:
   name: "Neil Young"
   bio: "Old man"
   user: mallory
+  created_at: <%= 2.weeks.ago %>
 
 bonjovi:
   name: "Bon Jovi"
   bio: "Living on a prayer"
   user: mallory
+  created_at: <%= 1.week.ago %>
 
 ants:
   name: "The Ants"
   bio: "A bunch of ants"
   user: archer
+  created_at: <%= 1.day.ago %>
 
 <% 30.times do |n| %>
 band_<%= n %>:
-  name: <%= Faker::Lorem.sentence(5) %>
+  name: "Band_#{n}"
   bio: <%= Faker::Lorem.sentence(5) %>
   user: mallory
+  created_at: <%= Time.zone.now %>
 <% end %>
